@@ -76,8 +76,16 @@ $white:#FFF;
     font-weight: $f-weight;
 }
 
+.container {
+    margin: 1px auto;
+    width: 100%;
+     
+}
+
 .header {
-    @extend %vh-elements;
+    padding: 20px;
+    width: 100%;
+    height: 100vh;
     background: url('../images/header-bg.jpg');
     background-attachment: fixed;
     @extend %bg-styles;
@@ -98,15 +106,15 @@ $white:#FFF;
         }
     }
     .header__navbar {
-        height: 15vh;
+        padding: 20px 100px;
         width: 100%;
         margin-bottom: 150px;
         @extend %flex-center;
-        .header__navbar-items {
-            width: 70%;
-            @extend %flex-center;
-            justify-content: space-between;
+        justify-content: space-between;
+        .bars {
+            display: none;
         }
+         
         .header__navbar-logo {
             width: 124px;
             height: 26px;
@@ -142,7 +150,7 @@ $white:#FFF;
         @extend %remaining-subtitle;
     }
     .popular__cards {
-        width: 780px;
+        flex-wrap: wrap;
         margin-top: 30px;
         @extend %flex-center;
         gap: 30px;
@@ -190,8 +198,10 @@ $white:#FFF;
         margin-top: 40px;
         width: 100%;
         // @extend %flex-center;
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
+        // @extend %flex-center;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
         gap: 52px;
         .opacity {
             opacity: 0.6;
@@ -283,6 +293,10 @@ $white:#FFF;
                     width: 100%;
                     height: 100%;
                 }
+                .blogs__card1-text {
+                    @extend %flex-column;
+                    gap: 20px;
+                }
             }
             .blogs__card1-title {
                 margin-top: 25px;
@@ -298,7 +312,6 @@ $white:#FFF;
             }
         }
         .blogs__card2 {
-            height: 200px;
             display: flex;
             align-items: center;
             gap: 30px;
@@ -335,6 +348,7 @@ $white:#FFF;
     padding: 70px 230px;
     @extend %flex-center;
     .footer__items {
+        flex-wrap: wrap;
         @extend %flex-center;
         align-items: flex-start;
         gap: 130px;
@@ -364,7 +378,7 @@ $white:#FFF;
                 @extend %flex-center;
                 gap: 35px;
                 .email {
-                    width: 200px;
+                    width: 120px;
                     padding: 10px 20px;
                     border-radius: 5px;
                     border: 1px solid #00000029;
@@ -379,6 +393,180 @@ $white:#FFF;
         }
     }
 }
+@media (max-width: 447px) {
+
+    .header {
+        .header__navbar {
+            padding: 20px;
+        }
+        .header__text {
+            .header__text-title {
+                font-size: 30px;
+            }
+            .header__text-subtitle {
+                font-size: 12px;
+            }
+        } 
+    }
+        
+     
+    .blogs .blogs__cards .blogs__card1 {
+        width: 300px;
+    }
+    .blogs .blogs__cards .blogs__card1 .blogs__card1-img {
+        width: 300px;
+        height: 200px;
+        font-size: 12px;
+    }
+
+    .blogs .blogs__cards .blogs__card2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer {
+        padding: 70px 100px;
+        .footer__items {
+            gap: 50px;
+        }
+    }
+
+    .popular {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .popular .popular__cards .popular__card {
+        width: 300px;
+        .popular__card-img {
+            width: 300px;
+            height: 250px;
+        }
+    }
+
+     .offers {
+        padding: 20px;
+     }
+}
+
+@media (max-width: 769px) {
+    .header {
+        .header__navbar {
+            margin-bottom: 80px;
+            .bars {
+                display: block;
+                font-size: 20px;
+                color: #fff;
+            }
+
+            .header__navbar-links {
+                display: none;
+            }
+
+            .header__navbar-btn {
+                display: none;
+            }
+
+        }
+        .header__text {
+            justify-content: center;
+        }
+    }
+    .blogs {
+        .blogs__cards {
+            display: grid;
+            grid-template-columns: auto;
+            .blogs__card1 {
+                width: 360px;
+                .blogs__card1-img {
+                    width: 360px;
+                    height: 300px;
+                }
+            }
+            .blogs__card2 {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+    .offers {
+        padding: 70px;
+    }
+
+    .footer {
+        padding: 70px;
+    }
+}
 
  
+@media screen and (max-width: 990px) and (min-width: 770px){
+    .header {
+        .header__navbar {
+            margin-bottom: 160px;
+            .bars {
+                display: block;
+                font-size: 20px;
+                color: #fff;
+            }
+            .header__navbar-links {
+                display: none;
+            }
+    
+            .header__navbar-btn {
+                display: none;
+            }
+        }
+    }
+    .blogs {
+        .blogs__cards {
+            display: grid;
+            grid-template-columns: auto;
+        }
+    }
 
+    .offers {
+        padding: 150px;
+    }
+
+    .footer {
+        padding: 70px;
+    }
+
+    .popular {
+        padding: 100px 20px;
+    }
+}
+
+@media (max-width:1200px) and (min-width:991px) {
+    .popular {
+        padding: 140px 20px;
+    }
+
+    .offers {
+         padding: 140px 60px;
+    }
+
+    .blogs {
+        .blogs__cards {
+            display: grid; 
+            gap: 50px;
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto auto;
+            .blogs__card1 {
+                grid-column: 1/4;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .blogs__card1-text {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                }
+            }
+            .blogs__card2 {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

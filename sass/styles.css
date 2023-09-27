@@ -22,25 +22,20 @@
 }
 
 .header {
-  width: 100%;
-  height: 100vh;
-}
-
-.header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
 
-.footer .footer__items .footer__subscribe, .blogs .blogs__cards .blogs__card2 .blogs__card2-text, .blogs .blogs__cards .blogs__card1, .blogs, .offers .offers__cards .offers__card, .offers, .popular .popular__cards .popular__card, .popular, .header .header__text, .header {
+.footer .footer__items .footer__subscribe, .blogs .blogs__cards .blogs__card2 .blogs__card2-text, .blogs .blogs__cards .blogs__card1 .blogs__card1-img .blogs__card1-text, .blogs .blogs__cards .blogs__card1, .blogs, .offers .offers__cards .offers__card, .offers, .popular .popular__cards .popular__card, .popular, .header .header__text, .header {
   display: flex;
   justify-content: start;
   flex-direction: column;
   align-items: center;
 }
 
-.footer .footer__items .footer__subscribe .footer__subscribe-inputs, .footer .footer__items, .footer, .offers .scrolls, .popular .popular__cards, .header .header__navbar .header__navbar-links, .header .header__navbar .header__navbar-items, .header .header__navbar {
+.footer .footer__items .footer__subscribe .footer__subscribe-inputs, .footer .footer__items, .footer, .offers .scrolls, .popular .popular__cards, .header .header__navbar .header__navbar-links, .header .header__navbar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +61,15 @@
   text-align: center;
 }
 
+.container {
+  margin: 1px auto;
+  width: 100%;
+}
+
 .header {
+  padding: 20px;
+  width: 100%;
+  height: 100vh;
   background: url("../images/header-bg.jpg");
   background-attachment: fixed;
 }
@@ -88,13 +91,13 @@
   padding: 18px 46px;
 }
 .header .header__navbar {
-  height: 15vh;
+  padding: 20px 100px;
   width: 100%;
   margin-bottom: 150px;
-}
-.header .header__navbar .header__navbar-items {
-  width: 70%;
   justify-content: space-between;
+}
+.header .header__navbar .bars {
+  display: none;
 }
 .header .header__navbar .header__navbar-logo {
   width: 124px;
@@ -121,7 +124,7 @@
   gap: 20px;
 }
 .popular .popular__cards {
-  width: 780px;
+  flex-wrap: wrap;
   margin-top: 30px;
   gap: 30px;
 }
@@ -157,8 +160,9 @@
 .offers .offers__cards {
   margin-top: 40px;
   width: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto auto auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 52px;
 }
 .offers .offers__cards .opacity {
@@ -251,6 +255,9 @@
   width: 100%;
   height: 100%;
 }
+.blogs .blogs__cards .blogs__card1 .blogs__card1-img .blogs__card1-text {
+  gap: 20px;
+}
 .blogs .blogs__cards .blogs__card1 .blogs__card1-title {
   margin-top: 25px;
   font-size: 20px;
@@ -270,7 +277,6 @@
   font-weight: 500;
 }
 .blogs .blogs__cards .blogs__card2 {
-  height: 200px;
   display: flex;
   align-items: center;
   gap: 30px;
@@ -310,6 +316,7 @@
   padding: 70px 230px;
 }
 .footer .footer__items {
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 130px;
 }
@@ -343,7 +350,7 @@
   gap: 35px;
 }
 .footer .footer__items .footer__subscribe .footer__subscribe-inputs .email {
-  width: 200px;
+  width: 120px;
   padding: 10px 20px;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.1607843137);
@@ -352,4 +359,146 @@
 }
 .footer .footer__items .footer__subscribe .footer__subscribe-inputs .footer__btn {
   padding: 10px 32px;
+}
+
+@media (max-width: 447px) {
+  .header .header__navbar {
+    padding: 20px;
+  }
+  .header .header__text .header__text-title {
+    font-size: 30px;
+  }
+  .header .header__text .header__text-subtitle {
+    font-size: 12px;
+  }
+  .blogs .blogs__cards .blogs__card1 {
+    width: 300px;
+  }
+  .blogs .blogs__cards .blogs__card1 .blogs__card1-img {
+    width: 300px;
+    height: 200px;
+    font-size: 12px;
+  }
+  .blogs .blogs__cards .blogs__card2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer {
+    padding: 70px 100px;
+  }
+  .footer .footer__items {
+    gap: 50px;
+  }
+  .popular {
+    padding: 20px;
+    text-align: center;
+  }
+  .popular .popular__cards .popular__card {
+    width: 300px;
+  }
+  .popular .popular__cards .popular__card .popular__card-img {
+    width: 300px;
+    height: 250px;
+  }
+  .offers {
+    padding: 20px;
+  }
+}
+@media (max-width: 769px) {
+  .header .header__navbar {
+    margin-bottom: 80px;
+  }
+  .header .header__navbar .bars {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+  }
+  .header .header__navbar .header__navbar-links {
+    display: none;
+  }
+  .header .header__navbar .header__navbar-btn {
+    display: none;
+  }
+  .header .header__text {
+    justify-content: center;
+  }
+  .blogs .blogs__cards {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .blogs .blogs__cards .blogs__card1 {
+    width: 360px;
+  }
+  .blogs .blogs__cards .blogs__card1 .blogs__card1-img {
+    width: 360px;
+    height: 300px;
+  }
+  .blogs .blogs__cards .blogs__card2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .offers {
+    padding: 70px;
+  }
+  .footer {
+    padding: 70px;
+  }
+}
+@media screen and (max-width: 990px) and (min-width: 770px) {
+  .header .header__navbar {
+    margin-bottom: 160px;
+  }
+  .header .header__navbar .bars {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+  }
+  .header .header__navbar .header__navbar-links {
+    display: none;
+  }
+  .header .header__navbar .header__navbar-btn {
+    display: none;
+  }
+  .blogs .blogs__cards {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .offers {
+    padding: 150px;
+  }
+  .footer {
+    padding: 70px;
+  }
+  .popular {
+    padding: 100px 20px;
+  }
+}
+@media (max-width: 1200px) and (min-width: 991px) {
+  .popular {
+    padding: 140px 20px;
+  }
+  .offers {
+    padding: 140px 60px;
+  }
+  .blogs .blogs__cards {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+  }
+  .blogs .blogs__cards .blogs__card1 {
+    grid-column: 1/4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .blogs .blogs__cards .blogs__card1 .blogs__card1-text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .blogs .blogs__cards .blogs__card2 {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=styles.css.map */
