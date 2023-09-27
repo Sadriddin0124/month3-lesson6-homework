@@ -32,6 +32,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 %flex-column {
@@ -78,6 +79,7 @@ $white:#FFF;
 .header {
     @extend %vh-elements;
     background: url('../images/header-bg.jpg');
+    background-attachment: fixed;
     @extend %bg-styles;
     @extend %flex-column;
     .header__text {

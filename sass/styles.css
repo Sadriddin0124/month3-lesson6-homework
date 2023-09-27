@@ -30,6 +30,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .footer .footer__items .footer__subscribe, .blogs .blogs__cards .blogs__card2 .blogs__card2-text, .blogs .blogs__cards .blogs__card1, .blogs, .offers .offers__cards .offers__card, .offers, .popular .popular__cards .popular__card, .popular, .header .header__text, .header {
@@ -67,6 +68,7 @@
 
 .header {
   background: url("../images/header-bg.jpg");
+  background-attachment: fixed;
 }
 .header .header__text {
   align-items: flex-start;
