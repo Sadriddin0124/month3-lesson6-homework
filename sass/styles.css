@@ -21,13 +21,6 @@
   font-family: "Gelasio";
 }
 
-.header {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
 .footer .footer__items .footer__subscribe, .blogs .blogs__cards .blogs__card2 .blogs__card2-text, .blogs .blogs__cards .blogs__card1 .blogs__card1-img .blogs__card1-text, .blogs .blogs__cards .blogs__card1, .blogs, .offers .offers__cards .offers__card, .offers, .popular .popular__cards .popular__card, .popular, .header .header__text, .header {
   display: flex;
   justify-content: start;
@@ -71,6 +64,9 @@
   width: 100%;
   padding-bottom: 150px;
   background: url("../images/header-bg.jpg");
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 .header .header__text {
@@ -440,6 +436,7 @@
 }
 @media (max-width: 769px) and (min-width: 448px) {
   .header .header__navbar {
+    padding: 30px;
     margin-bottom: 80px;
   }
   .header .header__navbar .bars {

@@ -29,7 +29,7 @@
 }
 
 %bg-styles {
-    background-position: center;
+    background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -87,8 +87,10 @@ $white:#FFF;
     width: 100%;
     padding-bottom: 150px;
     background: url('../images/header-bg.jpg');
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    @extend %bg-styles;
     @extend %flex-column;
     .header__text {
         @extend %flex-column;
@@ -488,6 +490,7 @@ $white:#FFF;
 @media (max-width: 769px) and (min-width:448px) {
     .header {
         .header__navbar {
+            padding: 30px;
             margin-bottom: 80px;
             .bars {
                 display: block;
