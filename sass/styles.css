@@ -386,8 +386,17 @@
   .header .header__text .header__text-subtitle {
     font-size: 12px;
   }
-  .popular {
-    padding: 140px;
+  .offers .offers__cards .card_5 {
+    display: none;
+  }
+  .offers .offers__cards .card_4 {
+    display: none;
+  }
+  .offers .offers__cards .card_3 {
+    display: none;
+  }
+  .offers .offers__cards .card_2 {
+    display: none;
   }
   .blogs .blogs__cards {
     display: grid;
@@ -415,7 +424,7 @@
     text-align: center;
   }
   .popular {
-    padding: 20px;
+    padding: 140px 20px;
     text-align: center;
   }
   .popular .popular__cards .popular__card {
